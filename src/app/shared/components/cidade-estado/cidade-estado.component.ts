@@ -59,9 +59,8 @@ ngOnInit() {
 listaDeCidade(ev: any){
   this.estadoChange.emit(ev.selectedItem);
   const uf = ev.selectedItem.sigla;
-  return
-  this.cidadeService
-  .getCidade (uf)
+    this.cidadeService
+  .getCidades (uf)
   .subscribe(resultado => {this.cidades = resultado})
 }
 }
