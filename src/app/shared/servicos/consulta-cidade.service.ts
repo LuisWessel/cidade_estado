@@ -19,6 +19,7 @@ export class ConsultaCidadeService {
           cidadePorEstado.push(new Cidade(uf))
         })
         return cidadePorEstado;
+
       }
       )
     )

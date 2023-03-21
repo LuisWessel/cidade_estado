@@ -34,6 +34,8 @@ cidade?: Cidade
 
 @Output()
 estadoChange: EventEmitter <Estado> = new EventEmitter<Estado>();
+cidadeChange: EventEmitter <Cidade> = new EventEmitter<Cidade>();
+
 
 constructor (
   private estadoService : ConsultaEstadoService,
@@ -55,7 +57,7 @@ ngOnInit() {
     })
   })
 }
-//recebe as siglas
+//recebe as siglas dos estados
 listaDeCidade(ev: any){
   this.estadoChange.emit(ev.selectedItem);
   const uf = ev.selectedItem.sigla;
@@ -63,4 +65,11 @@ listaDeCidade(ev: any){
   .getCidades (uf)
   .subscribe(resultado => {this.cidades = resultado})
 }
-}
+getCidadeSelecionada(ev?: any){
+  this.cidadeChange.emit(ev.selectedItem);
+  const cidadeSelecionada = ev.selectedItem.nome;
+  console.log(cidadeSelecionada)
+  return cidadeSelecionada;
+
+    }
+  }
