@@ -1,3 +1,4 @@
+import { PaginaTesteComponent } from './pages/pagina-teste/pagina-teste.component';
 import { CidadeEstadoComponent } from './shared/components/cidade-estado/cidade-estado.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -16,9 +17,10 @@ const routes: Routes = [
   },
   {
     path: 'cidade-estado',
-    component: CidadeEstadoComponent,
+    component: PaginaTesteComponent,
     canActivate: [ AuthGuardService ]
   },
+
   {
     path: 'profile',
     component: ProfileComponent,
